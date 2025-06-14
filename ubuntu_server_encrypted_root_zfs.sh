@@ -155,8 +155,8 @@ keyboard_console_settings(){
 	dpkg-reconfigure -f noninteractive console-setup
 	export DEBIAN_"${install_warning_level}"
 	
-	## debconf-get-selections | grep keyboard-configuration | tee "${kb_console_settings}"
-	## debconf-get-selections | grep console-setup | tee -a "${kb_console_settings}"
+	debconf-get-selections | grep keyboard-configuration | tee "${kb_console_settings}"
+	debconf-get-selections | grep console-setup | tee -a "${kb_console_settings}"
 }
 
 topology_min_disk_check(){
