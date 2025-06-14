@@ -147,12 +147,16 @@ keyboard_console_settings(){
 	
 	export DEBIAN_PRIORITY=high
 	export DEBIAN_FRONTEND=dialog
-	dpkg-reconfigure keyboard-configuration
-	dpkg-reconfigure console-setup
+	## dpkg-reconfigure keyboard-configuration
+ 	echo "keyboard-configuration keyboard-configuration/layoutcode string us" | debconf-set-selections
+	dpkg-reconfigure -f noninteractive keyboard-configuration
+	## dpkg-reconfigure console-setup
+ 	echo 'CHARMAP="UTF-8"' | sudo tee -a /etc/default/console-setup
+	dpkg-reconfigure -f noninteractive console-setup
 	export DEBIAN_"${install_warning_level}"
 	
-	debconf-get-selections | grep keyboard-configuration | tee "${kb_console_settings}"
-	debconf-get-selections | grep console-setup | tee -a "${kb_console_settings}"
+	## debconf-get-selections | grep keyboard-configuration | tee "${kb_console_settings}"
+	## debconf-get-selections | grep console-setup | tee -a "${kb_console_settings}"
 }
 
 topology_min_disk_check(){
