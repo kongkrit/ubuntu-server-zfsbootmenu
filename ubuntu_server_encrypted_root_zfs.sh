@@ -6,7 +6,7 @@
 # shellcheck disable=SC2317  # Don't warn about unreachable commands in this file
 
 set -euo pipefail
-#set -x
+set -x
 
 ##Usage: <script_filename> initial | postreboot | remoteaccess | datapool
 
