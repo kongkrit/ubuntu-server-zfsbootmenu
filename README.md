@@ -18,7 +18,7 @@ Supports:
 ## Usage
 Boot the system with an Ubuntu live desktop iso. Start the terminal (Ctrl+Alt+T) and enter the following.
 
-	git clone https://github.com/Sithuk/ubuntu-server-zfsbootmenu.git ~/ubuntu-server-zfsbootmenu
+	git clone https://github.com/kongkrit/ubuntu-server-zfsbootmenu.git ~/ubuntu-server-zfsbootmenu
     cd ~/ubuntu-server-zfsbootmenu
     chmod +x ubuntu_server_encrypted_root_zfs.sh
 	
